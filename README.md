@@ -36,6 +36,19 @@ $ \d
 # Connect to a database
 \c recipeguru #\c + database name
 ```
+# SQL code block
+```SQL
+# Create a database
+CREATE DATABASE dbName
 
+# Insert data inside a table
+INSERT INTO table_name (column1, column2, ...)
+
+# Drop table
+DROP TABLE table_name
+
+# Drop Database
+DROP DATABASE dbName
+```
 # Reference
 [doc](https://gist.github.com/coproduto/5e8cec614a86f1d5668e5322a8b2e67c)
