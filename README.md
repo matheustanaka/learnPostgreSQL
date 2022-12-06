@@ -38,17 +38,22 @@ $ \d
 ```
 # SQL code block
 ```SQL
-# Create a database
-CREATE DATABASE dbName
+-- Create a database
+CREATE DATABASE dbName;
 
-# Insert data inside a table
-INSERT INTO table_name (column1, column2, ...)
+-- Insert data inside a table
+INSERT INTO table_name (column1, column2, ...);
 
-# Drop table
-DROP TABLE table_name
+-- Drop table
+DROP TABLE table_name;
 
-# Drop Database
-DROP DATABASE dbName
+-- Drop Database
+DROP DATABASE dbName;
+
+-- Used to add, delete or modify columns, is also used to add and drop constraints on an existing table
+ALTER TABLE table_name ADD column_name datatype;
+ALTER TABLE table_name DROP COLUMN column_name;
+ALTER TABLE table_name ALTER COLUMN column_name datatype;
 ```
 # Reference
 [doc](https://gist.github.com/coproduto/5e8cec614a86f1d5668e5322a8b2e67c)
