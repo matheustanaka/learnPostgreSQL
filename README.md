@@ -89,5 +89,37 @@ DELETE FROM ingredients
 WHERE image='different.jpg'
 RETURNING *;
 ```
+
+### SELECT
+```SQL
+-- Select will basic search in your dabatase
+SELECT * FROM ingredients;  -- it will return all the data
+
+-- You can specify the limit that you want to request
+SELECT * FROM ingredients LIMIT 10; 
+```
+### LIMIT and OFFSET
+```SQL
+-- With limit we can return only five records
+SELECT id, title, image
+FROM ingredients
+LIMIT 5;
+
+-- But let's imagine that you need to get the next five records, in this case, we can use OFFSET to skip that many rows before beginning return  rows
+SELECT id, title, image
+FROM ingredients
+LIMIT 5
+OFFSET 5;
+
+-- It will return 5 ingredients but starting from 6 because we are skipping the number 5 with offset clause
+```
+### ORDER BY
+```SQL
+-- We can use order by to order the data
+SELECT * FROM ingredients ORDER BY title;
+
+-- We can order by DESC, it will return by descending and ascending too.
+SELECT * FROM ingredients ORDER BY id DESC;
+```
 # Reference
 [doc](https://gist.github.com/coproduto/5e8cec614a86f1d5668e5322a8b2e67c)
