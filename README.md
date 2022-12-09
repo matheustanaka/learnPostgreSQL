@@ -163,5 +163,6 @@ return:
 | WHERE CustomerName LIKE 'a__%' | Finds any values that start with "a" and are at least 3 characters in length |
 | WHERE ContactName LIKE 'a%o'   | Finds any values that start with "a" and ends with "o"                       |
 
+
 # Reference
 [doc](https://gist.github.com/coproduto/5e8cec614a86f1d5668e5322a8b2e67c)
