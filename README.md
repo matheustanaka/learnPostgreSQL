@@ -121,5 +121,47 @@ SELECT * FROM ingredients ORDER BY title;
 -- We can order by DESC, it will return by descending and ascending too.
 SELECT * FROM ingredients ORDER BY id DESC;
 ```
+
+### LIKE, ILIKE & SQL FUNCTIONS
+```SQL
+-- It used in "WHERE" clause to search for a specified pattern in a column
+SELECT * FROM ingredients WHERE title LIKE 'b%';
+
+-- Function LOWER() and UPPER() will return transform the data on that function
+SELECT * FROM ingredients WHERE LOWER(title) LIKE '%BANANA%'; -- return: banana
+
+```
+
+```SQL
+-- ILIKE is used when you have upper strings inside the input, but whatever the way that want search, it always convert to lower.
+SELECT * FROM ingredients WHERE title ILIKE '%bAnAnA%'; -- return: banana
+
+-- If you add bAnAnA with "LIKE" clause it will not find, because there are uppercase strings.
+-- By default postgres is sensitive case, which means that the data should be exactly equals the result.
+-- Based on that, they created "ILIKE" where is used in insensitive cases, you can put uppercase strings but it always read as lower.
+
+```
+
+```SQL 
+-- CONCAT FUNCTION
+SELECT CONCAT('OI', 'CARAI');
+
+return:
+ concat
+---------
+ OICARAI
+```
+
+#### Rules
+| LIKE OPERATOR                  | DESCRIPTION                                                                  |
+|--------------------------------|------------------------------------------------------------------------------|
+| WHERE CustomerName LIKE 'a%'   | Finds any values that start with "a"                                         |
+| WHERE CustomerName LIKE '%a'   | Finds any values that end with "a"                                           |
+| WHERE CustomerName LIKE '%or%' | Finds any values that have "or" in any position                              |
+| WHERE CustomerName LIKE '_r%'  | Finds any values that have "r" in the second position                        |
+| WHERE CustomerName LIKE 'a_%'  | Finds any values that start with "a" and are at least 2 characters in length |
+| WHERE CustomerName LIKE 'a__%' | Finds any values that start with "a" and are at least 3 characters in length |
+| WHERE ContactName LIKE 'a%o'   | Finds any values that start with "a" and ends with "o"                       |
+
 # Reference
 [doc](https://gist.github.com/coproduto/5e8cec614a86f1d5668e5322a8b2e67c)
