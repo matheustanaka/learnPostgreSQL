@@ -98,6 +98,15 @@ SELECT * FROM ingredients;  -- it will return all the data
 -- You can specify the limit that you want to request
 SELECT * FROM ingredients LIMIT 10; 
 ```
+### WHERE
+```SQL 
+-- Used to filter only those data that match with the condition specified
+SELECT * FROM ingredients WHERE CONCAT(title, type) ILIKE $2;
+-- $ is used with WHERE clause to indicate a placeholder for a value that will
+-- be provided when the query is executed.
+-- At this condition, $2 placeholder represents the second value that will be provided 
+-- when the query is executed. This value will be concatenated with the title and type columns to form the ILIKE comparison.
+```
 ### LIMIT and OFFSET
 ```SQL
 -- With limit we can return only five records
